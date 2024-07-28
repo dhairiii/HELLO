@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.bg-peach {
+    background: linear-gradient(to bottom, #fddbb0, #f8c8dc); /* Soft peach gradient */
+}
+
+.bg-lavender {
+    background: linear-gradient(to bottom, #e6e6fa, #dcd0ff); /* Pastel lavender gradient */
+}
+
+.bg-mint {
+    background: linear-gradient(to bottom, #d4f1f4, #a0e7e5); /* Mint green gradient */
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; /* Dark text for better contrast */
+}
+
+.btn-danger {
+    background-color: #ff6f61; /* Coral color */
+    border-color: #ff6f61;
+}
+
+.btn-danger:hover {
+    background-color: #ff3b3f; /* Darker coral on hover */
+    border-color: #ff3b3f;
+}
+
+.title-left {
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.rose {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.petal {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 50% 50%, var(--color) 50%, darkred 80%);
+    border-radius: 50%;
+    transform-origin: center;
+    animation: bloom 2s ease-in-out;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateX(30px); }
+.petal:nth-child(2) { transform: rotate(60deg) translateX(30px); }
+.petal:nth-child(3) { transform: rotate(120deg) translateX(30px); }
+.petal:nth-child(4) { transform: rotate(180deg) translateX(30px); }
+.petal:nth-child(5) { transform: rotate(240deg) translateX(30px); }
+.petal:nth-child(6) { transform: rotate(300deg) translateX(30px); }
+
+.leaf {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(to bottom right, #4caf50, #2e7d32);
+    border-radius: 50% 50% 0 0;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: leafShake 1s ease-in-out infinite;
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes leafShake {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(10deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .btn-lg {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .rose {
+        width: 80px;
+        height: 80px;
+    }
+
+    .petal {
+        width: 50px;
+        height: 50px;
+    }
+
+    .leaf {
+        width: 30px;
+        height: 60px;
+    }
+
+    .title-left {
+        font-size: 1.2rem;
+    }
+}
